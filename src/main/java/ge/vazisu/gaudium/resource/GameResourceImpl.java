@@ -1,4 +1,4 @@
-package ge.vazisu.gaudium.controller;
+package ge.vazisu.gaudium.resource;
 
 import ge.vazisu.gaudium.domain.Game;
 import ge.vazisu.gaudium.dto.GameDto;

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="css/icon-font.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        <title>Gaudium</title>
+    </head>
+    <body>
+        <section class="section-input">
+            <div class="row">
+                <div class="col-1-of-3">
+                    <label for="tournament-name"></label>
+                    <input class="section-input__text u-width-input-medium" id="tournament-name" type="text"
+                           placeholder="tournament name">
+                </div>
+                <div class="col-1-of-3">
+                    <label for="home-name"></label>
+                    <input class="section-input__text u-width-input-medium" id="home-name" type="text"
+                           placeholder="home team">
+                </div>
+                <div class="col-1-of-3">
+                    <label for="away-name"></label>
+                    <input class="section-input__text u-width-input-medium" id="away-name" type="text"
+                           placeholder="away team">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1-of-3">
+                    <label for="fon-home"></label>
+                    <input class="section-input__text u-width-input-small" id="fon-home" type="text"
+                           placeholder="fon home">
+                    <label for="fon-draw"></label>
+                    <input class="section-input__text u-width-input-small" id="fon-draw" type="text"
+                           placeholder="fon draw">
+                    <label for="fon-away"></label>
+                    <input class="section-input__text u-width-input-small" id="fon-away" type="text"
+                           placeholder="fon away">
+                </div>
+                <div class="col-1-of-3">
+                    <label for="man-home"></label>
+                    <input class="section-input__text u-width-input-small" id="man-home" type="text"
+                           placeholder="man home">
+                    <label for="man-draw"></label>
+                    <input class="section-input__text u-width-input-small" id="man-draw" type="text"
+                           placeholder="man draw">
+                    <label for="man-away"></label>
+                    <input class="section-input__text u-width-input-small" id="man-away" type="text"
+                           placeholder="man away">
+                </div>
+                <div class="col-1-of-3">
+                    <a href="#" class="btn-regular btn__submit-input">Submit</a>
+                </div>
+            </div>
+        </section>
+        <section class="section-output">
+            <div class="stat-options">
+                <ul>
+                    <li><a href="#" class="stat-tournament">Tournament</a></li>
+                    <li><a href="#" class="stat-home-both">Home</a></li>
+                    <li><a href="#" class="stat-away-both">Away</a></li>
+                    <li><a href="#" class="stat-home">Home Only</a></li>
+                    <li><a href="#" class="stat-away">Away Only</a></li>
+                    <li><a href="#" class="stat-h2h">H2H</a></li>
+                    <li><a href="#" class="stat-fon">Fon</a></li>
+                    <li><a href="#" class="stat-fon-tournament">Fon Tournament</a></li>
+                    <li><a href="#" class="stat-man">Man</a></li>
+                    <li><a href="#" class="stat-man-tournament">Man Tournament</a></li>
+                    <li><a href="#" class="stat-pool-queerness">Pool queerness</a></li>
+                </ul>
+            </div>
+            <div class="stat-output">
+                <table class="table table-output__results">
+                    <!--                    <caption>Статистика домашней команды</caption>-->
+                    <!--                    <colgroup>-->
+                    <!--                        <col span="2">-->
+                    <!--                        <col span="2">-->
+                    <!--                        <col span="2">-->
+                    <!--                        <col span="3">-->
+                    <!--                        <col span="3">-->
+                    <!--                    </colgroup>-->
+                    <!--                    <tr>-->
+                    <!--                        <th>Тираж</th>-->
+                    <!--                        <th>Турнир</th>-->
+                    <!--                        <th>Хозяева</th>-->
+                    <!--                        <th>Гости</th>-->
+                    <!--                        <th colspan="2">Счет</th>-->
+                    <!--                        <th colspan="3">FON</th>-->
+                    <!--                        <th colspan="3">MAN</th>-->
+                    <!--                        <th>W-D-L</th>-->
+                    <!--                        <th>Fon</th>-->
+                    <!--                        <th>Man</th>-->
+                    <!--                    </tr>-->
+                    <!--                    <tr>-->
+                    <!--                        <td>123</td>-->
+                    <!--                        <td>ФУТБОЛ. РОССИЯ. ЧЕМПИОНАТ ФНЛ</td>-->
+                    <!--                        <td>Нефтехимик</td>-->
+                    <!--                        <td>Луч Владивосток</td>-->
+                    <!--                        <td>2</td>-->
+                    <!--                        <td>1</td>-->
+                    <!--                        <td>30</td>-->
+                    <!--                        <td>40</td>-->
+                    <!--                        <td>30</td>-->
+                    <!--                        <td>25.50</td>-->
+                    <!--                        <td>17.50</td>-->
+                    <!--                        <td>45.45</td>-->
+                    <!--                        <td>0-0-0</td>-->
+                    <!--                        <td>0-0-0</td>-->
+                    <!--                        <td>0-0-0</td>-->
+                    <!--                    </tr>-->
+
+                </table>
+            </div>
+        </section>
+        <section class="section-criteria">
+
+            <div class="row">
+                    <div class="criteria-select">
+                        <div class="criteria-select__button criteria-select__button--add">
+                            <a href="#" class="btn-medium btn-criteria-add">add criteria</a>
+                        </div>
+                        <div class="criteria-list">
+<!--                            <div class="criteria-list__item" >-->
+<!--                                <select name="criteria-select__list" id="criteria"  class="criteria-select__list">-->
+<!--                                    <option value="none" selected>none</option>-->
+<!--                                    <option value="TOURNAMENT_SOME_GAMES_WITHOUT_DRAW">TOURNAMENT&nbsp;&nbsp;&nbsp;Серия матчей без ничьих</option>-->
+<!--                                    <option value="TOURNAMENT_SOME_GAMES_WITHOUT_HOME_WIN">TOURNAMENT&nbsp;&nbsp;&nbsp;Серия матчей без побед хозяев</option>-->
+<!--                                    <option value="TOURNAMENT_SOME_GAMES_WITHOUT_AWAY_WIN">TOURNAMENT&nbsp;&nbsp;&nbsp;Серия матчей без побед гостей</option>-->
+<!--                                </select>-->
+<!--                                <select name="result-select__list" id="result" class="criteria-select__list">-->
+<!--                                    <option value="RESULT_1">1</option>-->
+<!--                                    <option value="RESULT_X">x</option>-->
+<!--                                    <option value="RESULT_2">2</option>-->
+<!--                                    <option value="RESULT_1X">1X</option>-->
+<!--                                    <option value="RESULT_X2">x2</option>-->
+<!--                                    <option value="RESULT_12">12</option>-->
+<!--                                </select>-->
+<!--                                <a href="#" class="criteria-select__action criteria-select__action&#45;&#45;info">info</a>-->
+<!--                                <a href="#" class="criteria-select__action criteria-select__action&#45;&#45;remove">delete</a>-->
+<!--                            </div>-->
+                        </div>
+                        <div class="criteria-select__button criteria-select__button--submit">
+                            <label for="draw-criteria-number"></label>
+                            <a href="#" class="btn-medium btn-criteria-submit">submit</a>
+                            <input class="draw-criteria-number u-width-input-small" id="draw-criteria-number" type="text"
+                                   placeholder="draw">
+                        </div>
+
+                        <div class="update-info__button">
+                            <a href="#" class="btn-medium btn-update-info">update info</a>
+                            <label for="update-info"></label>
+                            <input class="update-info-number u-width-input-small" id="update-info" type="text"
+                                   placeholder="draw">
+                        </div>
+                </div>
+            </div>
+        </section>
+    <script type="text/javascript" src="js/bundle.js"></script></body>
+</html>

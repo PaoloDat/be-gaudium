@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * GameService.
@@ -21,6 +22,12 @@ import java.util.List;
 public class GameService {
 
     private GameRepository gameRepository;
+
+    public Game findByDrawNumberAndHomeTeamNameAndAwayTeamName(int drawNumber, String homeTeamName, String awayTeamName) {
+        Optional<Game> game = gameRepository.findByDrawNumberAndHomeTeamNameAndAwayTeamName(drawNumber, homeTeamName, awayTeamName);
+        return game.orElseThrow(() -> new IllegalArgumentException("Update prediction info error"));
+    }
+
 
     public List<Game> getGamesByTournamentName(String name, Pageable pageable) {
         return gameRepository.findAllByTournamentNameOrderByIdDesc(name, pageable);

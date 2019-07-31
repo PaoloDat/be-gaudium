@@ -1,6 +1,7 @@
 package ge.vazisu.gaudium.bootstrap;
 
 import ge.vazisu.gaudium.repository.GameRepository;
+import ge.vazisu.gaudium.repository.PredictionRepository;
 import ge.vazisu.gaudium.service.GameService;
 import lombok.AllArgsConstructor;
 import org.springframework.context.ApplicationListener;
@@ -18,9 +19,9 @@ public class Bootstrap implements ApplicationListener<ContextRefreshedEvent> {
 
     private GameRepository gameRepository;
     private GameService gameService;
+    private PredictionRepository predictionRepository;
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-//        gameService.getGamesByTournamentName("Футбол. Англия. Премьер-Лига111");
     }
 }

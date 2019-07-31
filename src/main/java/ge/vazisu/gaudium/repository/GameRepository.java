@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Repository for {@link Game}.
@@ -14,6 +15,8 @@ import java.util.List;
  * @author Pavel_Datunashvili
  */
 public interface GameRepository extends JpaRepository<Game, Long> {
+
+    Optional<Game> findByDrawNumberAndHomeTeamNameAndAwayTeamName(int drawNumber, String homeTeamName, String awayTeamName);
 
     List<Game> findAllByTournamentNameOrderByIdDesc(String tournamentName, Pageable pageable);
 
@@ -46,11 +49,12 @@ public interface GameRepository extends JpaRepository<Game, Long> {
             String tournamentName, double homeMin, double homeMax, double drawMin, double drawMax, double awayMin, double awayMax, Pageable pageable);
 
 
-
     @Query("select g from Game  g where g.fonHome > g.fonAway and g.manHome < g.manAway and g.tournamentName = :tournamentName")
     List<Game> findFonHomeAndManAwayQueerness(@Param("tournamentName") String tournamentName, Pageable pageable);
 
     @Query("select g from Game  g where g.fonHome < g.fonAway and g.manHome > g.manAway and g.tournamentName = :tournamentName")
     List<Game> findFonAwayAndManHomeQueerness(@Param("tournamentName") String tournamentName, Pageable pageable);
+
+    List<Game> findAllByIdGreaterThan(Long id);
 
 }
