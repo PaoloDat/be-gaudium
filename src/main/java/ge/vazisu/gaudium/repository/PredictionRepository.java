@@ -1,9 +1,11 @@
 package ge.vazisu.gaudium.repository;
 
 import ge.vazisu.gaudium.domain.Prediction;
+import ge.vazisu.gaudium.enums.Criteria;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * PredictionRepository.
@@ -13,4 +15,8 @@ import java.util.List;
 public interface PredictionRepository extends JpaRepository<Prediction, Long> {
 
     List<Prediction> findAllByDrawNumber(int drawNumber);
+
+    List<Prediction> findAllByCriteriaIn(Set<Criteria> criteria);
+
+    List<Prediction> findAllByTournamentNameAndCriteriaIn(String tournamentName, Set<Criteria> criteria);
 }

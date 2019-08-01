@@ -18,29 +18,32 @@ public enum Criteria {
     TOURNAMENT_R_SOME_GAMES_WITHOUT_AWAY_WIN("Серия игр без побед гостей в турнире"),
     TOURNAMENT_R_SOME_GAMES_WITH_HOME_WIN("Серия игр с преобладанием побед хозяев турнире"),
 
-    TOURNAMENT_HOME_R_SOME_GAMES_WITHOUT_HOME_WIN("Серия игр домашней команды в турнире без побед хозяев"),
-    TOURNAMENT_AWAY_R_SOME_GAMES_WITHOUT_HOME_WIN("Серия игр гостевой команды в турнире без побед хозяев"),
-    TOURNAMENT_AWAY_R_SOME_GAMES_AWAY_WIN_IN_ROW("Серия игр гостевой команды в турнире с серией побед гостей"),
+    TOURNAMENT_WDL_HOME_R_SOME_GAMES_WITHOUT_HOME_WIN("Серия игр домашней команды в турнире без побед хозяев"),
+    TOURNAMENT_WDL_AWAY_R_SOME_GAMES_WITHOUT_HOME_WIN("Серия игр гостевой команды в турнире без побед хозяев"),
+    TOURNAMENT_WDL_AWAY_R_SOME_GAMES_AWAY_WIN_IN_ROW("Серия игр гостевой команды в турнире с серией побед гостей"),
 
-    TOURNAMENT_R_SOME_GAMES_WITHOUT_FON_POOL("Серия игр без FON пула"),
-    TOURNAMENT_R_SOME_GAMES_WITHOUT_FON_MIDDLE("Серия игр без FON мидпулла"),
-    TOURNAMENT_R_SOME_GAMES_WITHOUT_FON_UNPOOL("Серия игр без FON противопула"),
+    TOURNAMENT_FON_POOL_R_SOME_GAMES_WITHOUT_FON_POOL("Серия игр без FON пула"),
+    TOURNAMENT_FON_POOL_R_SOME_GAMES_WITHOUT_FON_MIDDLE("Серия игр без FON мидпулла"),
+    TOURNAMENT_FON_POOL_R_SOME_GAMES_WITHOUT_FON_UNPOOL("Серия игр без FON противопула"),
 
-    TOURNAMENT_R_SOME_GAMES_WITHOUT_MAN_POOL("Серия игр без MAN пула"),
-    TOURNAMENT_R_SOME_GAMES_WITHOUT_MAN_MIDDLE("Серия игр без MAN мидпулла"),
-    TOURNAMENT_R_SOME_GAMES_WITHOUT_MAN_UNPOOL("Серия игр без MAN противопула"),
+    TOURNAMENT_MAN_POOL_R_SOME_GAMES_WITHOUT_MAN_POOL("Серия игр без MAN пула"),
+    TOURNAMENT_MAN_POOL_R_SOME_GAMES_WITHOUT_MAN_MIDDLE("Серия игр без MAN мидпулла"),
+    TOURNAMENT_MAN_POOL_R_SOME_GAMES_WITHOUT_MAN_UNPOOL("Серия игр без MAN противопула"),
 
-    TOURNAMENT_R_SOME_GAMES_WITH_MAN_POOL("Серия игр с преобладанием MAN пула"),
+    TOURNAMENT_MAN_POOL_R_SOME_GAMES_WITH_MAN_POOL("Серия игр с преобладанием MAN пула"),
 
-    TOURNAMENT_HOME_R_SOME_GAMES_WITHOUT_FON_POOL("Серия игр домашней команды в турнире без FON пула"),
-    TOURNAMENT_HOME_R_SOME_GAMES_WITHOUT_MAN_POOL("Серия игр домашней команды в турнире без MAN пула"),
-    TOURNAMENT_AWAY_R_SOME_GAMES_WITHOUT_FON_POOL("Серия игр гостевой команды в турнире с серией FON противопул подряд"),
-    TOURNAMENT_AWAY_R_SOME_GAMES_WITHOUT_MAN_UNPOOL("Серия игр гостевой команды в турнире без MAN противопула"),
+    TOURNAMENT_FON_POOL_HOME_R_SOME_GAMES_WITHOUT_FON_POOL("Серия игр домашней команды в турнире без FON пула"),
+    TOURNAMENT_FON_POOL_AWAY_R_SOME_GAMES_WITHOUT_FON_POOL("Серия игр гостевой команды в турнире с серией FON противопул подряд"),
+    TOURNAMENT_MAN_POOL_HOME_R_SOME_GAMES_WITHOUT_MAN_POOL("Серия игр домашней команды в турнире без MAN пула"),
+    TOURNAMENT_MAN_POOL_AWAY_R_SOME_GAMES_WITHOUT_MAN_UNPOOL("Серия игр гостевой команды в турнире без MAN противопула"),
 
-    TOURNAMENT_AWAY_TEAM_AWAY_R_SOME_GAMES_WITHOUT_MAN_UNPOOL("Серия игр гостевой команды в гостях без MAN противопула"),
+    TOURNAMENT_MAN_POOL_AWAY_TEAM_AWAY_R_SOME_GAMES_WITHOUT_MAN_UNPOOL("Серия игр гостевой команды в гостях без MAN противопула"),
 
-    FON_WDL_R("Серия игр с преобладанием побед хозяев"),
-    FON_POOL_R("Серия игр с преобладанием FON пула"),
+    WDL_R_SOME_HOME_WIN("Серия игр с преобладанием побед хозяев"),
+    FON_POOL_R_SOME_FON_POOL("Серия игр с преобладанием FON пула"),
+    FON_POOL_R_SOME_MIDDLE("Серия игр с преобладанием FON middle pool"),
+    MAN_WDL_R_SOME_AWAY_WIN("Серия игр с преобладанием побед гостевой команды"),
+    MAN_POOL_R_SOME_MIDDLE("Серия игр с преобладанием MAN middle pool"),
 
     /**
      * WDL

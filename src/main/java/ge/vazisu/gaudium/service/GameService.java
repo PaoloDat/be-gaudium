@@ -23,6 +23,10 @@ public class GameService {
 
     private GameRepository gameRepository;
 
+    public Game getGameById(Long id) {
+        return gameRepository.findById(id).orElseThrow( () -> new IllegalArgumentException("Error during getGameById()"));
+    }
+
     public Game findByDrawNumberAndHomeTeamNameAndAwayTeamName(int drawNumber, String homeTeamName, String awayTeamName) {
         Optional<Game> game = gameRepository.findByDrawNumberAndHomeTeamNameAndAwayTeamName(drawNumber, homeTeamName, awayTeamName);
         return game.orElseThrow(() -> new IllegalArgumentException("Update prediction info error"));
