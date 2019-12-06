@@ -16,7 +16,7 @@ public interface PredictionRepository extends JpaRepository<Prediction, Long> {
 
     List<Prediction> findAllByDrawNumber(int drawNumber);
 
-    List<Prediction> findAllByCriteriaIn(Set<Criteria> criteria);
+    List<Prediction> findAllByCriteriaInAndRefIdIsNotNull(Set<Criteria> criteria);
 
-    List<Prediction> findAllByTournamentNameAndCriteriaIn(String tournamentName, Set<Criteria> criteria);
+    List<Prediction> findAllByTournamentNameAndCriteriaInAndRefIdIsNotNull(String tournamentName, Set<Criteria> criteria);
 }

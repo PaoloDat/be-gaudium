@@ -115,6 +115,10 @@ body {
   text-transform: uppercase;
   font-size: 1.4rem;
   letter-spacing: 1.3px; }
+  .criteria-select__available_list ul {
+    list-style: none; }
+    .criteria-select__available_list ul li:not(:last-child) {
+      margin-bottom: 1.5rem; }
   .criteria-select__list {
     color: #777;
     padding: 0.7rem 1rem;
@@ -122,6 +126,8 @@ body {
     text-transform: uppercase;
     border-radius: 0.7rem;
     font-size: 1.1rem; }
+    .criteria-select__list--item {
+      width: 500px; }
   .criteria-select__action {
     color: #777;
     text-decoration: none;
@@ -148,7 +154,7 @@ body {
   .criteria-select__button--add {
     margin-bottom: 2rem; }
   .criteria-select__button--submit {
-    margin-top: 2rem; }
+    margin-top: 5rem; }
 
 .criteria-list__item {
   margin-bottom: 1rem; }
@@ -216,3 +222,7 @@ body {
     width: calc((100% - 1rem * 3) / 4); }
   .row .col-2-of-4--small-gap {
     width: calc(2 * (100% - 1rem * 3) / 4 + 1rem); }
+
+.row-select {
+  max-width: 95%;
+  margin: 0 5rem; }

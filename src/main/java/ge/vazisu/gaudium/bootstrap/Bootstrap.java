@@ -1,5 +1,6 @@
 package ge.vazisu.gaudium.bootstrap;
 
+import ge.vazisu.gaudium.enums.Criteria;
 import ge.vazisu.gaudium.repository.GameRepository;
 import ge.vazisu.gaudium.repository.PredictionRepository;
 import ge.vazisu.gaudium.service.GameService;
@@ -25,6 +26,7 @@ public class Bootstrap implements ApplicationListener<ContextRefreshedEvent> {
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-//        predictionService.getPredictionStat("Футбол. Швеция. 1-я лига", Criteria.MAN_POOL_R_SOME_MIDDLE);
+//        predictionService.getPredictionStat("Футбол. Франция. Премьер-Лига", Criteria.DB_HOME_ONLY_1);
+//        predictionRepository.deleteById(3L);
     }
 }

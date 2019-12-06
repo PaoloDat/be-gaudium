@@ -40,12 +40,13 @@ public class PredictionResourceImpl {
     }
 
     @PostMapping
-    public void createPrediction(@RequestBody PredictionDto dto) {
-        predictionRepository.save(mapperFacade.map(dto, Prediction.class));
+    public Long createPrediction(@RequestBody PredictionDto dto) {
+        Prediction prediction = predictionRepository.save(mapperFacade.map(dto, Prediction.class));
+        return prediction.getId();
     }
 
     @PostMapping("/draw/{drawnumber}")
-    public void updatePredictionInfo(@PathVariable("drawnumber") int drawNumber) {
-        predictionService.updatePredictionInfo(drawNumber);
+    public int updatePredictionInfo(@PathVariable("drawnumber") int drawNumber) {
+        return predictionService.updatePredictionInfo(drawNumber);
     }
 }

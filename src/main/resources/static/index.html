@@ -74,73 +74,39 @@
             </div>
             <div class="stat-output">
                 <table class="table table-output__results">
-                    <!--                    <caption>Статистика домашней команды</caption>-->
-                    <!--                    <colgroup>-->
-                    <!--                        <col span="2">-->
-                    <!--                        <col span="2">-->
-                    <!--                        <col span="2">-->
-                    <!--                        <col span="3">-->
-                    <!--                        <col span="3">-->
-                    <!--                    </colgroup>-->
-                    <!--                    <tr>-->
-                    <!--                        <th>Тираж</th>-->
-                    <!--                        <th>Турнир</th>-->
-                    <!--                        <th>Хозяева</th>-->
-                    <!--                        <th>Гости</th>-->
-                    <!--                        <th colspan="2">Счет</th>-->
-                    <!--                        <th colspan="3">FON</th>-->
-                    <!--                        <th colspan="3">MAN</th>-->
-                    <!--                        <th>W-D-L</th>-->
-                    <!--                        <th>Fon</th>-->
-                    <!--                        <th>Man</th>-->
-                    <!--                    </tr>-->
-                    <!--                    <tr>-->
-                    <!--                        <td>123</td>-->
-                    <!--                        <td>ФУТБОЛ. РОССИЯ. ЧЕМПИОНАТ ФНЛ</td>-->
-                    <!--                        <td>Нефтехимик</td>-->
-                    <!--                        <td>Луч Владивосток</td>-->
-                    <!--                        <td>2</td>-->
-                    <!--                        <td>1</td>-->
-                    <!--                        <td>30</td>-->
-                    <!--                        <td>40</td>-->
-                    <!--                        <td>30</td>-->
-                    <!--                        <td>25.50</td>-->
-                    <!--                        <td>17.50</td>-->
-                    <!--                        <td>45.45</td>-->
-                    <!--                        <td>0-0-0</td>-->
-                    <!--                        <td>0-0-0</td>-->
-                    <!--                        <td>0-0-0</td>-->
-                    <!--                    </tr>-->
-
                 </table>
             </div>
         </section>
         <section class="section-criteria">
 
-            <div class="row">
+            <div class="row-select">
                     <div class="criteria-select">
                         <div class="criteria-select__button criteria-select__button--add">
-                            <a href="#" class="btn-medium btn-criteria-add">add criteria</a>
+                            <div class="criteria-select__available_list">
+                                <ul>
+                                    <li><a href="#" id="0" class="btn-medium btn-criteria-add">База данных. Статистика турнира</a></li>
+                                    <li><a href="#" id="1" class="btn-medium btn-criteria-add">База данных. Статистика домашней команды</a></li>
+                                    <li><a href="#" id="2" class="btn-medium btn-criteria-add">База данных. Статистика гостевой команды</a></li>
+                                    <li><a href="#" id="3" class="btn-medium btn-criteria-add">База данных. Статистика домашней команды дома</a></li>
+                                    <li><a href="#" id="4" class="btn-medium btn-criteria-add">База данных. Статистика гостевой команды в гостях</a></li>
+                                    <li><a href="#" id="5" class="btn-medium btn-criteria-add">База данных. Статистика личных встреч</a></li>
+                                    <li><a href="#" id="6" class="btn-medium btn-criteria-add">База данных. Статистика FON показателей</a></li>
+                                    <li><a href="#" id="7" class="btn-medium btn-criteria-add">База данных. Статистика FON TOURNAMENT показателей</a></li>
+                                    <li><a href="#" id="8" class="btn-medium btn-criteria-add">База данных. Статистика MAN показателей</a></li>
+                                    <li><a href="#" id="9" class="btn-medium btn-criteria-add">База данных. Статистика MAN TOURNAMENT показателей</a></li>
+                                    <li><a href="#" id="10" class="btn-medium btn-criteria-add">База данных. Странности пула</a></li>
+                                    <li><a href="#" id="11" class="btn-medium btn-criteria-add">Турнир. Статистика домашней команды</a></li>
+                                    <li><a href="#" id="12" class="btn-medium btn-criteria-add">Турнир. Статистика гостевой команды</a></li>
+                                    <li><a href="#" id="13" class="btn-medium btn-criteria-add">Турнир. Статистика домашней команды дома</a></li>
+                                    <li><a href="#" id="14" class="btn-medium btn-criteria-add">Турнир. Статистика гостевой команды в гостях</a></li>
+                                    <li><a href="#" id="15" class="btn-medium btn-criteria-add">Турнир. Статистика личных встреч</a></li>
+                                    <li><a href="#" id="16" class="btn-medium btn-criteria-add">Наблюдения</a></li>
+                                </ul>
+                            </div>
+
+
                         </div>
                         <div class="criteria-list">
-<!--                            <div class="criteria-list__item" >-->
-<!--                                <select name="criteria-select__list" id="criteria"  class="criteria-select__list">-->
-<!--                                    <option value="none" selected>none</option>-->
-<!--                                    <option value="TOURNAMENT_SOME_GAMES_WITHOUT_DRAW">TOURNAMENT&nbsp;&nbsp;&nbsp;Серия матчей без ничьих</option>-->
-<!--                                    <option value="TOURNAMENT_SOME_GAMES_WITHOUT_HOME_WIN">TOURNAMENT&nbsp;&nbsp;&nbsp;Серия матчей без побед хозяев</option>-->
-<!--                                    <option value="TOURNAMENT_SOME_GAMES_WITHOUT_AWAY_WIN">TOURNAMENT&nbsp;&nbsp;&nbsp;Серия матчей без побед гостей</option>-->
-<!--                                </select>-->
-<!--                                <select name="result-select__list" id="result" class="criteria-select__list">-->
-<!--                                    <option value="RESULT_1">1</option>-->
-<!--                                    <option value="RESULT_X">x</option>-->
-<!--                                    <option value="RESULT_2">2</option>-->
-<!--                                    <option value="RESULT_1X">1X</option>-->
-<!--                                    <option value="RESULT_X2">x2</option>-->
-<!--                                    <option value="RESULT_12">12</option>-->
-<!--                                </select>-->
-<!--                                <a href="#" class="criteria-select__action criteria-select__action&#45;&#45;info">info</a>-->
-<!--                                <a href="#" class="criteria-select__action criteria-select__action&#45;&#45;remove">delete</a>-->
-<!--                            </div>-->
                         </div>
                         <div class="criteria-select__button criteria-select__button--submit">
                             <label for="draw-criteria-number"></label>

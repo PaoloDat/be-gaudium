@@ -11,23 +11,23 @@ import lombok.experimental.Accessors;
 @Data
 @Accessors(chain = true)
 public class PredictionStatDto {
-    private int tournamentHome;
-    private int tournamentDraw;
-    private int tournamentAway;
-    private int tournamentFonPool;
-    private int tournamentFonMiddle;
-    private int tournamentFonUnpool;
-    private int tournamentManPool;
-    private int tournamentManMiddle;
-    private int tournamentManUnpool;
+    private int tournamentHome = 0;
+    private int tournamentDraw = 0;
+    private int tournamentAway = 0;
+    private int tournamentFonPool = 0;
+    private int tournamentFonMiddle = 0;
+    private int tournamentFonUnpool = 0;
+    private int tournamentManPool = 0;
+    private int tournamentManMiddle = 0;
+    private int tournamentManUnpool = 0;
 
-    private int allHome;
-    private int allDraw;
-    private int allAway;
-    private int allFonPool;
-    private int allFonMiddle;
-    private int allFonUnpool;
-    private int allManPool;
-    private int allManMiddle;
-    private int allManUnpool;
+    private int allHome = 0;
+    private int allDraw = 0;
+    private int allAway = 0;
+    private int allFonPool = 0;
+    private int allFonMiddle = 0;
+    private int allFonUnpool = 0;
+    private int allManPool = 0;
+    private int allManMiddle = 0;
+    private int allManUnpool = 0;
 }

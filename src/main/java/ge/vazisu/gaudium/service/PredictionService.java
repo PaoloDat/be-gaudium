@@ -28,13 +28,15 @@ public class PredictionService {
     private GameService gameService;
     private StatisticResolver statisticResolver;
 
-    public void updatePredictionInfo(int drawNumber) {
-        predictionRepository.findAllByDrawNumber(drawNumber).forEach(draw ->
+    public int updatePredictionInfo(int drawNumber) {
+        List<Prediction> allByDrawNumber = predictionRepository.findAllByDrawNumber(drawNumber);
+        allByDrawNumber.forEach(prediction ->
                 {
-                    Game game = gameService.findByDrawNumberAndHomeTeamNameAndAwayTeamName(drawNumber, draw.getHomeTeamName(), draw.getAwayTeamName());
-                    predictionRepository.save(draw.setRefId(game.getId()));
+                    Game game = gameService.findByDrawNumberAndHomeTeamNameAndAwayTeamName(drawNumber, prediction.getHomeTeamName(), prediction.getAwayTeamName());
+                    predictionRepository.save(prediction.setRefId(game.getId()));
                 }
         );
+        return allByDrawNumber.size();
     }
 
     public PredictionStatDto getPredictionStat(String tournamentName, Criteria criteria) {
@@ -49,33 +51,40 @@ public class PredictionService {
                 .map(gameService::getGameById)
                 .collect(Collectors.toList());
 
-        ResolvedGames allResolvedGames = statisticResolver.resolveGames(all);
-        ResolvedGames allResolvedGamesByTournament = statisticResolver.resolveGames(byTournament);
+        PredictionStatDto predictionStatDto = new PredictionStatDto();
 
-        return new PredictionStatDto()
-                .setAllHome(allResolvedGames.getHome())
-                .setAllDraw(allResolvedGames.getDraw())
-                .setAllAway(allResolvedGames.getAway())
-                .setAllFonPool(allResolvedGames.getFonPool())
-                .setAllFonMiddle(allResolvedGames.getFonMiddle())
-                .setAllFonUnpool(allResolvedGames.getFonUnpool())
-                .setAllManPool(allResolvedGames.getManPool())
-                .setAllManMiddle(allResolvedGames.getManMiddle())
-                .setAllManUnpool(allResolvedGames.getManUnpool())
-                .setTournamentHome(allResolvedGamesByTournament.getHome())
-                .setTournamentDraw(allResolvedGamesByTournament.getDraw())
-                .setTournamentAway(allResolvedGamesByTournament.getAway())
-                .setTournamentFonPool(allResolvedGamesByTournament.getFonPool())
-                .setTournamentFonMiddle(allResolvedGamesByTournament.getFonMiddle())
-                .setTournamentFonUnpool(allResolvedGamesByTournament.getFonUnpool())
-                .setTournamentManPool(allResolvedGamesByTournament.getManPool())
-                .setTournamentManMiddle(allResolvedGamesByTournament.getManMiddle())
-                .setTournamentManUnpool(allResolvedGamesByTournament.getManUnpool());
+        if (!all.isEmpty()) {
+            ResolvedGames allResolvedGames = statisticResolver.resolveGames(all);
+            predictionStatDto.setAllHome(allResolvedGames.getHome())
+                    .setAllDraw(allResolvedGames.getDraw())
+                    .setAllAway(allResolvedGames.getAway())
+                    .setAllFonPool(allResolvedGames.getFonPool())
+                    .setAllFonMiddle(allResolvedGames.getFonMiddle())
+                    .setAllFonUnpool(allResolvedGames.getFonUnpool())
+                    .setAllManPool(allResolvedGames.getManPool())
+                    .setAllManMiddle(allResolvedGames.getManMiddle())
+                    .setAllManUnpool(allResolvedGames.getManUnpool());
+        }
+
+        if (!byTournament.isEmpty()) {
+            ResolvedGames allResolvedGamesByTournament = statisticResolver.resolveGames(byTournament);
+            predictionStatDto.setTournamentHome(allResolvedGamesByTournament.getHome())
+                    .setTournamentDraw(allResolvedGamesByTournament.getDraw())
+                    .setTournamentAway(allResolvedGamesByTournament.getAway())
+                    .setTournamentFonPool(allResolvedGamesByTournament.getFonPool())
+                    .setTournamentFonMiddle(allResolvedGamesByTournament.getFonMiddle())
+                    .setTournamentFonUnpool(allResolvedGamesByTournament.getFonUnpool())
+                    .setTournamentManPool(allResolvedGamesByTournament.getManPool())
+                    .setTournamentManMiddle(allResolvedGamesByTournament.getManMiddle())
+                    .setTournamentManUnpool(allResolvedGamesByTournament.getManUnpool());
+        }
+
+        return predictionStatDto;
     }
 
     private List<Prediction> getPredictionsByTournamentNameAndCriteriaIn(String tournamentName, Criteria criteria) {
-        return Objects.isNull(tournamentName) ? predictionRepository.findAllByCriteriaIn(Collections.singleton(criteria))
-                : predictionRepository.findAllByTournamentNameAndCriteriaIn(tournamentName, Collections.singleton(criteria));
+        return Objects.isNull(tournamentName) ? predictionRepository.findAllByCriteriaInAndRefIdIsNotNull(Collections.singleton(criteria))
+                : predictionRepository.findAllByTournamentNameAndCriteriaInAndRefIdIsNotNull(tournamentName, Collections.singleton(criteria));
     }
 
 }
